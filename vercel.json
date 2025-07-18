@@ -1,0 +1,16 @@
+
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/[video_id].js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/([^/]+)/index.m3u8",
+      "dest": "/api/$1.js"
+    }
+  ]
+}
